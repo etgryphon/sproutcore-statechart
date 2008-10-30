@@ -132,14 +132,9 @@ SC.Statechart = {
       this.goState('m', 6, YES); // transitions to state M[6] on the next run loop
     </pre></code>
     
-    @param {String} stateVar 
-      the state variable you want to go to, e.g. *'a'*
-      
-    @param {Integer} index 
-      the state index you want to go to, e.g. *1*
-      
-    @param {Boolean} delay 
-      pass NO or undefined to enter the state immediately, YES to enter the state the next run loop
+    @param {String} stateVar The state variable you want to go to, e.g. *'a'*
+    @param {Integer} index The state index you want to go to, e.g. *1*
+    @param {Boolean} delay Pass NO or undefined to enter the state immediately, YES to enter the state the next run loop
   */
   goState: function(stateVar,index,delay) {
     var func = this['goState%@%@'.fmt(stateVar.toUpperCase(),index)];
