@@ -87,7 +87,7 @@ SC.Statechart = {
     this.state = SC.Object.create({
       log: NO,
       alert: NO,
-      history: SC.Object.create(),
+      history: SC.Object.create({}),
       
       show: function() {
         var regex = /^[a-z]$/;
@@ -105,7 +105,6 @@ SC.Statechart = {
         
         alert(result);
       },
-      
       
       propertyObserver: function(observer,target,key,value) {
         if (this.alert) alert('Entering state %@[%@]'.fmt(key,value));
@@ -148,7 +147,7 @@ SC.Statechart = {
     else {
       if (delay) { // call this.func() on the next run loop to give animation an opportunity to run
         var that = this;
-        function() {
+        var ignored  = function() {
           that.state.set(stateVar, index);
           that.state.history.set(stateVar, index);
           func.call(that);
