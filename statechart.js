@@ -40,9 +40,8 @@
   
   {{{
     function main() {
-      MyApp.state.set('a', 1); // set the start state
-      
-      // other stuff
+      SC.page.awake(); // need to set up views before calling goState method
+      MyApp.goState('a', 1); // enter the start state
     } ;
   }}}
   
