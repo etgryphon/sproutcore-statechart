@@ -126,19 +126,19 @@ SC.Statechart = {
       this.goState('b', 4); // transition to state B[4] and call this.goStateB4()
     </pre></code>
     
-    If you need to give animation an opporunity to run, you con set delay to YES:<br>
+    If you need to give animation an opportunity to run, you can set delay to YES:<br>
     
     <code><pre>
       this.goState('m', 6, YES); // transitions to state M[6] on the next run loop
     </pre></code>
     
-    @param {String} stateVar
-      the state variable you want to go to, e.g. 'a'
+    @param {String} stateVar 
+      the state variable you want to go to, e.g. *'a'*
       
-    @param {Integer} index
-      the state index you want to go to, e.g. 1
+    @param {Integer} index 
+      the state index you want to go to, e.g. *1*
       
-    @param {Boolean} delay
+    @param {Boolean} delay 
       pass NO or undefined to enter the state immediately, YES to enter the state the next run loop
   */
   goState: function(stateVar,index,delay) {
