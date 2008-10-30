@@ -9,7 +9,7 @@
   SC.Statechart is a mixin that implements a simplified statechart architecture.
   Usually, you'll apply this to your application's core object:
   
-  {{{
+  <code><pre>
     MyApp = SC.Object.create(SC.Statechart, {
       // SC.Statechart properies and methods are now available...
       
@@ -34,47 +34,47 @@
       goStateA2: function() { alert('in state A[2]'); }
       
     });
-  }}}
+  </pre></code>
   
   In your main.js file's main() function, set the start state:
   
-  {{{
+  <code><pre>
     function main() {
       MyApp.state.set('a', 1); // set the start state
       
       // other stuff
     } ;
-  }}}
+  </pre></code>
   
   You can easily access history states, which are automatically maintained by the SC.Statechart mixin:
   
-  {{{
+  <code><pre>
     switch ( this.state.history.a ) {
       case 1:
         console.log("the history value for state 'a' is 1");
         break;
     }
-  }}}
+  </pre></code>
   
   To put up a JavaScript alert each time your statechart changes, do:
   
-  {{{
+  <code><pre>
     this.state.alert = YES;
-  }}}
+  </pre></code>
   
   Similarly, you can receive a log in the console each time your statechart changes:
   
-  {{{
+  <code><pre>
     this.state.log = YES;
-  }}}
+  </pre></code>
   
   Simply set the properties to NO when you don't want to be alerted or see logs anymore.
   
   To see all of your defined state and state.history values in a JavaScript alert, do:
   
-  {{{
+  <code><pre>
     this.state.show();
-  }}}
+  </pre></code>
   
   @author Erich Atlas Ocean
   @version 1.0
@@ -115,26 +115,31 @@ SC.Statechart = {
   },
   
   /**
-    @property {SC.Object} the state values for this object
+    @field {SC.Object} the state values for this object
   */
   state: null, // overridden in initMixin
   
   /**
-    This is the method to use to changes states:
+    This is the method to use to changes states:<br>
     
-    {{{
+    <code><pre>
       this.goState('b', 4); // transition to state B[4] and call this.goStateB4()
-    }}}
+    </pre></code>
     
-    If you need to give animation an opporunity to run, you con set delay to YES:
+    If you need to give animation an opporunity to run, you con set delay to YES:<br>
     
-    {{{
+    <code><pre>
       this.goState('m', 6, YES); // transitions to state M[6] on the next run loop
-    }}}
+    </pre></code>
     
-    @param stateVar {String} the state variable you want to go to, e.g. 'a'
-    @param index {Integer} the state index you want to go to, e.g. 1
-    @param delay {Boolean} NO or undefined to enter the state immediately, YES to enter the next run loop
+    @param {String} stateVar
+      the state variable you want to go to, e.g. 'a'
+      
+    @param {Integer} index
+      the state index you want to go to, e.g. 1
+      
+    @param {Boolean} delay
+      pass NO or undefined to enter the state immediately, YES to enter the state the next run loop
   */
   goState: function(stateVar,index,delay) {
     var func = this['goState%@%@'.fmt(stateVar.toUpperCase(),index)];
