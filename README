@@ -1,0 +1,11 @@
+A statechart mixin for SproutCore clients. To install, cd into the top-level of your sproutcore application (the one with sc-config in it) and do:
+
+  sc-install onitunes-statechart
+
+Then edit your sc-config to include the framework:
+
+  c[:required] = [:sproutcore, :'onitunes-statechart']
+
+You'll need to restart sc-server to see the change.
+
+Online documentation is provided: http://localhost:4020/onitunes-statechart/-docs.
