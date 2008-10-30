@@ -9,7 +9,8 @@
   SC.Statechart is a mixin that implements a simplified statechart architecture.
   Usually, you'll apply this to your application's core object:
   
-  <code><pre>
+  {{{
+  <pre>
     MyApp = SC.Object.create(SC.Statechart, {
       // SC.Statechart properies and methods are now available...
       
@@ -34,47 +35,58 @@
       goStateA2: function() { alert('in state A[2]'); }
       
     });
-  </pre></code>
+  </pre>
+  }}}
   
   In your main.js file's main() function, set the start state:
   
-  <code><pre>
+  {{{
+  <pre>
     function main() {
       MyApp.state.set('a', 1); // set the start state
       
       // other stuff
     } ;
-  </pre></code>
+  </pre>
+  }}}
   
   You can easily access history states, which are automatically maintained by the SC.Statechart mixin:
   
-  <code><pre>
+  {{{
+  <pre>
     switch ( this.state.history.a ) {
       case 1:
         console.log("the history value for state 'a' is 1");
         break;
     }
-  </pre></code>
+  </pre>
+  }}}
   
   To put up a JavaScript alert each time your statechart changes, do:
   
-  <code><pre>
+  {{{
+  <pre>
     this.state.alert = YES;
-  </pre></code>
+  </pre>
+  }}}
   
   Similarly, you can receive a log in the console each time your statechart changes:
   
-  <code><pre>
+  {{{
+  <pre>
     this.state.log = YES;
-  </pre></code>
+  </pre>
+  }}}
   
   Simply set the properties to NO when you don't want to be alerted or see logs anymore.
   
   To see all of your defined state and state.history values in a JavaScript alert, do:
   
-  <code><pre>
+  {{{
+  <pre>
     this.state.show();
-  </pre></code>
+  </pre>
+  }}}
   
   @author Erich Atlas Ocean
   @version 1.0
