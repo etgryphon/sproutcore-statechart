@@ -111,7 +111,7 @@ SC.Statechart = {
         var result = 'States:\n\n';
         
         for (var key in this) {
-          if ( key.match(regex) ) result = result + key + this[k] + ': ' + '\n';
+          if ( key.match(regex) ) result = result + key + this[key] + ': ' + '\n';
         }
         
         result += '\n\nHistory:\n\n';
